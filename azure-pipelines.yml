@@ -12,6 +12,7 @@ pool:
 steps:
 - task: Maven@3
   inputs:
+    sourcefolder: '$(system.defaultworkingdirectory)/MR'
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
