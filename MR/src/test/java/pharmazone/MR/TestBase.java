@@ -16,7 +16,7 @@ public class TestBase {
 	protected static WebDriver driver;
 	protected static Eyes eyes;
 	private static Properties prop;
-	// soft assertion method	
+		
 	// soft assertion method
 	SoftAssert softassert = new SoftAssert();
 
