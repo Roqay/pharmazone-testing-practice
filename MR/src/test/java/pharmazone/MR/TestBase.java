@@ -38,7 +38,7 @@ public class TestBase {
 		driver.navigate().to("https://pharmazone.roqay.solutions/login");
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		initiEyes();
 	}
 
