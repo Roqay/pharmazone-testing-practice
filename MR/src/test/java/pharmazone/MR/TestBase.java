@@ -6,8 +6,8 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 import org.testng.asserts.SoftAssert;
 
 import com.applitools.eyes.selenium.Eyes;
@@ -21,7 +21,7 @@ public class TestBase {
 	SoftAssert softassert = new SoftAssert();
 
 	// Initiate the Chrome browser
-	@BeforeMethod
+	@BeforeSuite
 	public void openBrowser() throws InterruptedException, Exception {
 		prop = new Properties();
 		try {
@@ -30,7 +30,6 @@ public class TestBase {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-
 		String chromeDriverPath = prop.getProperty("chromepath");
 		System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 	//	System.setProperty("webdriver.chrome.driver", "resources\\ChromeDriver\\chromedriver1.exe");
@@ -52,18 +51,18 @@ public class TestBase {
 
 	// validate window design and elements
 	public void validateWindow() {
-		eyes.open(driver, "Uni", Thread.currentThread().getStackTrace()[2].getMethodName());
+		eyes.open(driver, "pharmazone", Thread.currentThread().getStackTrace()[2].getMethodName());
 		//get image for the whole screen
 		eyes.setForceFullPageScreenshot(true);
 		eyes.checkWindow();
 		eyes.close();
 	}
 
-	@AfterMethod
-	public static void quitBrowser() {
-		driver.quit();
-		eyes.abortIfNotClosed();
-	}
+//	@AfterSuite
+//	public  void quitBrowser() {
+//		driver.quit();
+//		eyes.abortIfNotClosed();
+//	}
 
 
 }
