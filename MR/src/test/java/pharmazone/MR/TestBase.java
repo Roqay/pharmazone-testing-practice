@@ -16,7 +16,7 @@ public class TestBase {
 	protected static WebDriver driver;
 	protected static Eyes eyes;
 	private static Properties prop;
-
+		
 	// soft assertion method
 	SoftAssert softassert = new SoftAssert();
 
@@ -37,7 +37,7 @@ public class TestBase {
 		driver.navigate().to("https://pharmazone.roqay.solutions/login");
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		initiEyes();
 	}
 
