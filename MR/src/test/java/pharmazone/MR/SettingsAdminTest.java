@@ -2,10 +2,10 @@ package pharmazone.MR;
 
 import org.testng.annotations.Test;
 
-public class NewTest extends TestBase {
+public class SettingsAdminTest extends TestBase {
   @Test
   public void f() {
 	  
-	  driver.navigate().to("https://web.whatsapp.com/");
+	  
   }
 }
