@@ -62,7 +62,8 @@ public class TestBase {
 //	public  void quitBrowser() {
 //		driver.quit();
 //		eyes.abortIfNotClosed();
-//	}
+//
+	//}
 
 
 }
