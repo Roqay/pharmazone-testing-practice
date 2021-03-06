@@ -4,9 +4,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.asserts.SoftAssert;
@@ -17,7 +17,7 @@ public class TestBase {
 	protected static WebDriver driver;
 	protected static Eyes eyes;
 	private static Properties prop;
-		
+
 	// soft assertion method
 	SoftAssert softassert = new SoftAssert();
 
@@ -33,13 +33,13 @@ public class TestBase {
 		}
 		String chromeDriverPath = prop.getProperty("chromepath");
 		System.setProperty("webdriver.chrome.driver", chromeDriverPath);
-	//	System.setProperty("webdriver.chrome.driver", "resources\\ChromeDriver\\chromedriver1.exe");
+		//	System.setProperty("webdriver.chrome.driver", "resources\\ChromeDriver\\chromedriver1.exe");
 		driver = new ChromeDriver();
 		/*
 		String firefoxDriverDriverPath = prop.getProperty("firefoxpath");
 		System.setProperty("webdriver.gecko.driver", firefoxDriverDriverPath);
 		driver = new FirefoxDriver();
-		*/
+		 */
 		driver.navigate().to("https://pharmazone.roqay.solutions/login");
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
@@ -63,12 +63,12 @@ public class TestBase {
 		eyes.checkWindow();
 		eyes.close();
 	}
-
-//	@AfterSuite
-//	public  void quitBrowser() {
-//		driver.quit();
-//		eyes.abortIfNotClosed();
-//	}
-
+/*
+	@AfterSuite
+	public  void quitBrowser() {
+		driver.quit();
+		eyes.abortIfNotClosed();
+	}
+*/
 
 }
