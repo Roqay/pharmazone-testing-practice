@@ -15,7 +15,11 @@ public class LoginAdminTest extends TestBase{
 		String expectedpagetitle = driver.getTitle();
 		String actualtitle ="Pharma Zone - dashboard";
 		softassert.assertEquals(actualtitle,expectedpagetitle);
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> 75d3a78f6bc0357d5bd8914bffb58e8d25f2dc03
 	}
 
 }

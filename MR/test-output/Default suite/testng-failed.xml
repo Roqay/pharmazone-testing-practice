@@ -3,13 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="pharmazone.MR.LoginAdminTest">
+      <class name="pharmazone.MR.SettingsAdminTest">
         <methods>
+<<<<<<< HEAD
           <include name="loginAdminSuccess"/>
           <include name="quitBrowser"/>
+=======
+          <include name="UserCanEditArea"/>
+>>>>>>> 75d3a78f6bc0357d5bd8914bffb58e8d25f2dc03
           <include name="openBrowser"/>
         </methods>
-      </class> <!-- pharmazone.MR.LoginAdminTest -->
+      </class> <!-- pharmazone.MR.SettingsAdminTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

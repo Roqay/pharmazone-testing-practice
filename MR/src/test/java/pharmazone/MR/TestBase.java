@@ -63,6 +63,7 @@ public class TestBase {
 		eyes.checkWindow();
 		eyes.close();
 	}
+<<<<<<< HEAD
 /*
 	@AfterSuite
 	public  void quitBrowser() {
@@ -70,5 +71,15 @@ public class TestBase {
 		eyes.abortIfNotClosed();
 	}
 */
+=======
+
+//	@AfterSuite
+//	public  void quitBrowser() {
+//		driver.quit();
+//		eyes.abortIfNotClosed();
+//
+	//}
+
+>>>>>>> 75d3a78f6bc0357d5bd8914bffb58e8d25f2dc03
 
 }
