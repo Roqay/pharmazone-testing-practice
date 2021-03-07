@@ -7,11 +7,16 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+<<<<<<< HEAD
+=======
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+>>>>>>> 4ad3520abf887489693fdeb8add7ed7fe8aadc0b
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.asserts.SoftAssert;
-
 import com.applitools.eyes.selenium.Eyes;
+import Helper.Help;
 
 public class TestBase {
 	protected static WebDriver driver;
@@ -33,12 +38,22 @@ public class TestBase {
 		}
 		String chromeDriverPath = prop.getProperty("chromepath");
 		System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+<<<<<<< HEAD
 		//	System.setProperty("webdriver.chrome.driver", "resources\\ChromeDriver\\chromedriver1.exe");
 		driver = new ChromeDriver();
 		/*
 		String firefoxDriverDriverPath = prop.getProperty("firefoxpath");
 		System.setProperty("webdriver.gecko.driver", firefoxDriverDriverPath);
 		driver = new FirefoxDriver();
+=======
+		// System.setProperty("webdriver.chrome.driver",
+		// "resources\\ChromeDriver\\chromedriver1.exe");
+		driver = new ChromeDriver();
+		/*
+		 * String firefoxDriverDriverPath = prop.getProperty("firefoxpath");
+		 * System.setProperty("webdriver.gecko.driver", firefoxDriverDriverPath); driver
+		 * = new FirefoxDriver();
+>>>>>>> 4ad3520abf887489693fdeb8add7ed7fe8aadc0b
 		 */
 		driver.navigate().to("https://pharmazone.roqay.solutions/login");
 		driver.manage().deleteAllCookies();
@@ -58,7 +73,7 @@ public class TestBase {
 	// validate window design and elements
 	public void validateWindow() {
 		eyes.open(driver, "pharmazone", Thread.currentThread().getStackTrace()[2].getMethodName());
-		//get image for the whole screen
+		// get image for the whole screen
 		eyes.setForceFullPageScreenshot(true);
 		eyes.checkWindow();
 		eyes.close();
@@ -73,13 +88,26 @@ public class TestBase {
 */
 =======
 
-//	@AfterSuite
-//	public  void quitBrowser() {
-//		driver.quit();
-//		eyes.abortIfNotClosed();
-//
-	//}
+	
+	//taking screenshot for failures 
+	@AfterMethod
+	public void screenshotOnFailure(ITestResult result) {
+		if (result.getStatus() == ITestResult.FAILURE) {
+			System.out.println("Failed!");
+			System.out.println("Taking Screenshot....");
+			Help.captureScreenshot(driver, result.getName());
+		}
+	}
 
+	@AfterSuite
+	public void quitBrowser() {
+		driver.quit();
+		eyes.abortIfNotClosed();
+
+<<<<<<< HEAD
 >>>>>>> 75d3a78f6bc0357d5bd8914bffb58e8d25f2dc03
+=======
+	}
+>>>>>>> 4ad3520abf887489693fdeb8add7ed7fe8aadc0b
 
 }
