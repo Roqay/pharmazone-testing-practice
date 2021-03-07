@@ -10,7 +10,7 @@ public class ForgetPasswordAdminTest extends TestBase {
 	String email = "admin@pharma.com";
 	WebDriverWait wait;
 
-	@Test(priority = 1, alwaysRun = true)
+	@Test(priority = 1, alwaysRun = true )
 	public  void forgetPassword() {
 		loginpageObject = new LoginPage(driver);
 		loginpageObject.forgetpassword();
