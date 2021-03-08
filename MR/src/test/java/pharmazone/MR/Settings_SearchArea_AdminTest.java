@@ -1,19 +1,17 @@
 package pharmazone.MR;
 
-import org.junit.Assert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-
-public class SettingsAdminTest extends TestBase {
-
+public class Settings_SearchArea_AdminTest extends TestBase  {
+	
 	LoginPage loginpageObject;
 	ForgetPasswordPage forgetpasswordObject;
 	String email = "admin@pharma.com";
 	WebDriverWait wait;
 	AreasPage AreaspageObject;
-	String area="Nuzha Governorate";
+	String area="Mubarak Al-Kabeer Governorate";
 	String editarea="Nuzha Gov";
 
 
@@ -41,31 +39,19 @@ public class SettingsAdminTest extends TestBase {
 		loginpageObject = new LoginPage(driver);
 		loginpageObject.loginAsAdmin(email1, password);
 	}
-	@Test(priority = 3)
-	public void UserCanAddNewArea()
+
+	@Test(priority =3, dependsOnMethods = "loginAdminSuccessp")
+	public void UserCanUseSearchFun()
+	
 	{
 		driver.navigate().to("https://pharmazone.roqay.solutions/#/areas");
 		AreaspageObject=new AreasPage(driver);
-		AreaspageObject.AddNewArea(area);
-		Assert.assertTrue(AreaspageObject.areanametxt.getText().contains(area));
+		AreaspageObject.SearchArea(area);
+		System.out.println(AreaspageObject.searchresulttext.getText());
+		String expareatitle="Mubarak Al-Kabeer Governorate";
+		softassert.assertEquals(area, expareatitle);
 
-	}
+		}
 	
-	@Test(priority = 4 , enabled = false)
-	public void UserCanEditArea() throws InterruptedException
-	{
-		AreaspageObject.EditArea(editarea);
-		System.out.println(AreaspageObject.savemsg.getText());
-		Assert.assertTrue(AreaspageObject.savemsg.getText().contains("Successfully"));
-	}
-
-	@Test(priority = 5 )
-	public void UserCanDeleteArea() throws InterruptedException
-	{
-		AreaspageObject.DeleteArea();
-		Assert.assertTrue(AreaspageObject.deletsuccessmsg.getText().contains("Deleted Successfully"));
-
-	}
 
 }
-

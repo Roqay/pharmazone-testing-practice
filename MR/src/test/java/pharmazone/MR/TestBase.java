@@ -7,11 +7,11 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-<<<<<<< HEAD
-=======
+//<<<<<<< HEAD
+//=======
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
->>>>>>> 4ad3520abf887489693fdeb8add7ed7fe8aadc0b
+//>>>>>>> 4ad3520abf887489693fdeb8add7ed7fe8aadc0b
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.asserts.SoftAssert;
@@ -38,7 +38,7 @@ public class TestBase {
 		}
 		String chromeDriverPath = prop.getProperty("chromepath");
 		System.setProperty("webdriver.chrome.driver", chromeDriverPath);
-<<<<<<< HEAD
+//<<<<<<< HEAD
 		//	System.setProperty("webdriver.chrome.driver", "resources\\ChromeDriver\\chromedriver1.exe");
 		driver = new ChromeDriver();
 		/*
@@ -78,7 +78,7 @@ public class TestBase {
 		eyes.checkWindow();
 		eyes.close();
 	}
-<<<<<<< HEAD
+//<<<<<<< HEAD
 /*
 	@AfterSuite
 	public  void quitBrowser() {
@@ -86,7 +86,7 @@ public class TestBase {
 		eyes.abortIfNotClosed();
 	}
 */
-=======
+//=======
 
 	
 	//taking screenshot for failures 
@@ -101,13 +101,13 @@ public class TestBase {
 
 	@AfterSuite
 	public void quitBrowser() {
-		driver.quit();
-		eyes.abortIfNotClosed();
+		//driver.quit();
+	//	eyes.abortIfNotClosed();
 
-<<<<<<< HEAD
->>>>>>> 75d3a78f6bc0357d5bd8914bffb58e8d25f2dc03
-=======
+//<<<<<<< HEAD
+//>>>>>>> 75d3a78f6bc0357d5bd8914bffb58e8d25f2dc03
+//=======
 	}
->>>>>>> 4ad3520abf887489693fdeb8add7ed7fe8aadc0b
+//>>>>>>> 4ad3520abf887489693fdeb8add7ed7fe8aadc0b
 
 }
