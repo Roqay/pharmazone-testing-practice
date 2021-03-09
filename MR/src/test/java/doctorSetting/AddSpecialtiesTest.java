@@ -1,4 +1,4 @@
-package adminSetting;
+package doctorSetting;
 
 import pharmazone.MR.AddSpecialityPage;
 import pharmazone.MR.HomePage;
@@ -20,7 +20,7 @@ public class AddSpecialtiesTest extends TestBase {
 
 	Faker faker = new Faker();
 	String specialName = faker.name().title();
-	
+
 	@Test(priority = 1, alwaysRun = true)
 	public void loginAdminSuccess() throws IOException {
 		Properties prop = new Properties();
@@ -30,18 +30,18 @@ public class AddSpecialtiesTest extends TestBase {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		
+
 		String email = prop.getProperty("admin");
-		String password =  prop.getProperty("password");
+		String password = prop.getProperty("password");
 		loginpageObject = new LoginPage(driver);
 		loginpageObject.loginAsAdmin(email, password);
 		driver.navigate().refresh();
 		String expectedpagetitle = driver.getTitle();
-		String actualtitle ="Pharma Zone - dashboard";
-		softassert.assertEquals(actualtitle,expectedpagetitle);
-	
+		String actualtitle = "Pharma Zone - dashboard";
+		softassert.assertEquals(actualtitle, expectedpagetitle);
+
 	}
-	
+
 	@Test(priority = 2, dependsOnMethods = "loginAdminSuccess")
 	public void openSpeicalitiesPager() throws InterruptedException {
 		homepageObject = new HomePage(driver);
@@ -50,17 +50,18 @@ public class AddSpecialtiesTest extends TestBase {
 		homepageObject.openSpeicalPage();
 		specialatiesoageObject = new SpecialtiesPage(driver);
 		specialatiesoageObject.AddNewSpeicalPage();
-		String actualurl= driver.getCurrentUrl();
-		String expectedurl= "https://pharmazone.roqay.solutions/#/doctors_specialties/create";
+		String actualurl = driver.getCurrentUrl();
+		String expectedurl = "https://pharmazone.roqay.solutions/#/doctors_specialties/create";
 		softassert.assertEquals(actualurl, expectedurl);
-		
+
 	}
-	@Test(priority =3, dependsOnMethods = {"loginAdminSuccess","openSpeicalitiesPager"})
+
+	@Test(priority = 3, dependsOnMethods = { "loginAdminSuccess", "openSpeicalitiesPager" })
 	public void addNewSpeical() {
-		addspeicalpagePbject= new AddSpecialityPage(driver);
+		addspeicalpagePbject = new AddSpecialityPage(driver);
 		addspeicalpagePbject.AddNewSpeicality(specialName);
 		softassert.assertEquals(specialName, addspeicalpagePbject.firstaddedSpecial);
-		
+
 	}
 
 }

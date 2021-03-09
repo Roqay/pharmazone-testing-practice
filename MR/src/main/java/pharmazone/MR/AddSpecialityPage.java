@@ -17,6 +17,8 @@ public class AddSpecialityPage extends PageBase {
 	@FindBy(xpath="//button[contains(text(),'add')]")
 	WebElement addspecialbtn;
 	
+	
+	
 	@FindBy(xpath="//tbody/tr[1]/td[2]")
 	public WebElement firstaddedSpecial;
 	

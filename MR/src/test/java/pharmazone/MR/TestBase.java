@@ -12,7 +12,8 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.asserts.SoftAssert;
 import com.applitools.eyes.selenium.Eyes;
-import Helper.Help;
+
+import uitilies.Help;
 
 public class TestBase {
 	protected static WebDriver driver;
