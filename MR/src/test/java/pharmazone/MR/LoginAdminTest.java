@@ -1,25 +1,35 @@
 package pharmazone.MR;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
 import org.testng.annotations.Test;
 
 public class LoginAdminTest extends TestBase{
-
+	
 	LoginPage loginpageObject;
-	String email = "ahmad@pharmazone-kw.com";
-	String password = "123456";
-
+	
+	
 	@Test
-	public void loginAdminSuccess() throws InterruptedException {
+	public void loginAdminSuccess() throws IOException {
+		Properties prop = new Properties();
+		try {
+			FileInputStream fis = new FileInputStream("resources\\test.properties");
+			prop.load(fis);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		String email = prop.getProperty("admin");
+		String password =  prop.getProperty("password");
 		loginpageObject = new LoginPage(driver);
 		loginpageObject.loginAsAdmin(email, password);
 		String expectedpagetitle = driver.getTitle();
 		String actualtitle ="Pharma Zone - dashboard";
 		softassert.assertEquals(actualtitle,expectedpagetitle);
-<<<<<<< HEAD
-
-=======
 	
->>>>>>> 75d3a78f6bc0357d5bd8914bffb58e8d25f2dc03
 	}
 
 }

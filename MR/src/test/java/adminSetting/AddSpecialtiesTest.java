@@ -32,7 +32,7 @@ public class AddSpecialtiesTest extends TestBase {
 		}
 		
 		String email = prop.getProperty("admin");
-		String password =  prop.getProperty("pass");
+		String password =  prop.getProperty("password");
 		loginpageObject = new LoginPage(driver);
 		loginpageObject.loginAsAdmin(email, password);
 		driver.navigate().refresh();
