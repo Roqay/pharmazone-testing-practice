@@ -12,6 +12,7 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.asserts.SoftAssert;
 import com.applitools.eyes.selenium.Eyes;
+import com.github.javafaker.Faker;
 
 import uitilies.Help;
 
@@ -19,6 +20,7 @@ public class TestBase {
 	protected static WebDriver driver;
 	protected static Eyes eyes;
 	private static Properties prop;
+	public Faker faker = new Faker();
 
 	// soft assertion method
 	protected SoftAssert softassert = new SoftAssert();

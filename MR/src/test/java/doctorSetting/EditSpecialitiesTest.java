@@ -1,24 +1,26 @@
 package doctorSetting;
 
-import pharmazone.MR.AddSpecialityPage;
-import pharmazone.MR.HomePage;
-import pharmazone.MR.LoginPage;
-import pharmazone.MR.SpecialtiesPage;
-import pharmazone.MR.TestBase;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
+
 import org.testng.annotations.Test;
 
-public class AddSpecialtiesTest extends TestBase {
+import pharmazone.MR.EditSpecialistyPage;
+import pharmazone.MR.HomePage;
+import pharmazone.MR.LoginPage;
+import pharmazone.MR.SpecialtiesPage;
+import pharmazone.MR.TestBase;
+
+public class EditSpecialitiesTest extends TestBase{
 	LoginPage loginpageObject;
 	HomePage homepageObject;
 	SpecialtiesPage specialatiesoageObject;
-	AddSpecialityPage addspeicalpagePbject;
-	// generate random name
-	String specialName = faker.name().title();
-
+	EditSpecialistyPage editspecialObject;
+	String editName = faker.name().title();
+	
+	
 	@Test(priority = 1, alwaysRun = true)
 	public void loginAdminSuccess() throws IOException {
 		Properties prop = new Properties();
@@ -47,19 +49,21 @@ public class AddSpecialtiesTest extends TestBase {
 		Thread.sleep(2000);
 		homepageObject.openSpeicalPage();
 		specialatiesoageObject = new SpecialtiesPage(driver);
-		specialatiesoageObject.AddNewSpeicalPage();
-		String actualurl = driver.getCurrentUrl();
-		String expectedurl = "https://pharmazone.roqay.solutions/#/doctors_specialties/create";
-		softassert.assertEquals(actualurl, expectedurl);
+		specialatiesoageObject.EditSpecialisty();
+		String actualtitle = specialatiesoageObject.pagetitle.getText();
+		String expectedtitle = "edit specialty";
+		softassert.assertEquals(actualtitle, expectedtitle);
 
 	}
-
-	@Test(priority = 3, dependsOnMethods = { "loginAdminSuccess", "openSpeicalitiesPager" })
-	public void addNewSpeical() {
-		addspeicalpagePbject = new AddSpecialityPage(driver);
-		addspeicalpagePbject.AddNewSpeicality(specialName);
-		softassert.assertEquals(specialName, addspeicalpagePbject.firstaddedSpecial);
-
+	
+	@Test(priority = 3, dependsOnMethods = {"loginAdminSuccess","openSpeicalitiesPager"})
+	public void editSpecialName() {
+		editspecialObject = new EditSpecialistyPage(driver);
+		editspecialObject.editSpecialPage(editName);
+		softassert.assertEquals(editName, editspecialObject.editNameTxt);
+		
 	}
+
+	
 
 }

@@ -13,7 +13,7 @@ public class SpecialtiesPage extends PageBase {
 	@FindBy(xpath="//*[@id=\"app\"]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]")
 	WebElement addspcialistybtn;
 	
-	@FindBy(xpath="//*[@id=\"app\"]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/a[1]/i[1]")
+	@FindBy(xpath="//a[@href='#/doctors_specialties/edit/27']")
 	WebElement editfirstspecialistybtn;
 	
 	@FindBy(xpath="//tbody/tr[1]/td[3]/a[2]")
@@ -24,6 +24,9 @@ public class SpecialtiesPage extends PageBase {
 	
 	@FindBy(xpath="//*[@id=\"app\"]/div[1]/div[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[2]/button[1]")
 	WebElement searchbtn;
+	
+	@FindBy(xpath="//a[contains(text(),'edit specialty')]")
+	public WebElement pagetitle;
 	
 	public void AddNewSpeicalPage() {
 		clickButton(addspcialistybtn);
