@@ -4,10 +4,14 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+//<<<<<<< HEAD
+//=======
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+//>>>>>>> 4ad3520abf887489693fdeb8add7ed7fe8aadc0b
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.asserts.SoftAssert;
@@ -34,6 +38,14 @@ public class TestBase {
 		}
 		String chromeDriverPath = prop.getProperty("chromepath");
 		System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+//<<<<<<< HEAD
+		//	System.setProperty("webdriver.chrome.driver", "resources\\ChromeDriver\\chromedriver1.exe");
+		driver = new ChromeDriver();
+		/*
+		String firefoxDriverDriverPath = prop.getProperty("firefoxpath");
+		System.setProperty("webdriver.gecko.driver", firefoxDriverDriverPath);
+		driver = new FirefoxDriver();
+=======
 		// System.setProperty("webdriver.chrome.driver",
 		// "resources\\ChromeDriver\\chromedriver1.exe");
 		driver = new ChromeDriver();
@@ -41,6 +53,7 @@ public class TestBase {
 		 * String firefoxDriverDriverPath = prop.getProperty("firefoxpath");
 		 * System.setProperty("webdriver.gecko.driver", firefoxDriverDriverPath); driver
 		 * = new FirefoxDriver();
+>>>>>>> 4ad3520abf887489693fdeb8add7ed7fe8aadc0b
 		 */
 		driver.navigate().to("https://pharmazone.roqay.solutions/login");
 		driver.manage().deleteAllCookies();
@@ -65,6 +78,15 @@ public class TestBase {
 		eyes.checkWindow();
 		eyes.close();
 	}
+//<<<<<<< HEAD
+/*
+	@AfterSuite
+	public  void quitBrowser() {
+		driver.quit();
+		eyes.abortIfNotClosed();
+	}
+*/
+//=======
 
 	
 	//taking screenshot for failures 
@@ -79,9 +101,13 @@ public class TestBase {
 
 	@AfterSuite
 	public void quitBrowser() {
-		driver.quit();
-		eyes.abortIfNotClosed();
+		//driver.quit();
+	//	eyes.abortIfNotClosed();
 
+//<<<<<<< HEAD
+//>>>>>>> 75d3a78f6bc0357d5bd8914bffb58e8d25f2dc03
+//=======
 	}
+//>>>>>>> 4ad3520abf887489693fdeb8add7ed7fe8aadc0b
 
 }

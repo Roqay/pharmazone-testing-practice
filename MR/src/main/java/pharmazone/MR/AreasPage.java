@@ -32,10 +32,14 @@ public class AreasPage extends PageBase {
 	WebElement savebtn;
 	@FindBy(xpath="//p[contains(text(),'saved successfully')]")
 	public WebElement savemsg;
+	@FindBy(xpath="//input[@type='text']")
+	 WebElement searcharea;
+
+	@FindBy(xpath="//button[contains(text(),'search')]")
+	 WebElement searchbtn;
 	
-	
-	
-	
+	@FindBy(xpath="//td[contains(text(),'Mubarak al-Kabeer Governorate')]")
+	public WebElement searchresulttext;
 	
 
 
@@ -60,10 +64,18 @@ public class AreasPage extends PageBase {
 		clickButton(deletebtn);
 		Thread.sleep(500);
 		clickButton(deletconfirmationbtn);
-				clickButton(closeconfirmationmsg);
+		clickButton(closeconfirmationmsg);
 
 	}
+	
+	public void SearchArea(String area) 
+	{
+		setTextElementText(searcharea, area);
+		searchbtn.click();
 
+	}
+	
 
+//
 
 }
