@@ -16,8 +16,8 @@ public class EditSpecialistyPage extends PageBase {
 	@FindBy(xpath="//button[contains(text(),'save')]")
 	WebElement saveNameBtn;
 	
-	@FindBy(xpath="//*[@id=\"app\"]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[2]")
-	public WebElement editNameTxt;
+	@FindBy(xpath="//div[contains(text(),'data saved successfully')]")
+	public WebElement successMsg;
 
 	public void editSpecialPage(String editName) {
 		speicalTxt.clear();

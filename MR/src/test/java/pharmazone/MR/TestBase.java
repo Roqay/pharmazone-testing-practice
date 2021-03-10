@@ -2,6 +2,7 @@ package pharmazone.MR;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
@@ -10,6 +11,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import com.applitools.eyes.selenium.Eyes;
 import com.github.javafaker.Faker;
@@ -21,6 +23,7 @@ public class TestBase {
 	protected static Eyes eyes;
 	private static Properties prop;
 	public Faker faker = new Faker();
+	LoginPage loginpageObject;
 
 	// soft assertion method
 	protected SoftAssert softassert = new SoftAssert();
@@ -64,6 +67,25 @@ public class TestBase {
 
 	}
 
+	@Test
+	public void loginAdminSuccess() throws IOException {
+		Properties prop = new Properties();
+		try {
+			FileInputStream fis = new FileInputStream("resources\\test.properties");
+			prop.load(fis);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		String email = prop.getProperty("admin");
+		String password =  prop.getProperty("password");
+		loginpageObject = new LoginPage(driver);
+		loginpageObject.loginAsAdmin(email, password);
+		String expectedpagetitle = driver.getTitle();
+		String actualtitle ="Pharma Zone - dashboard";
+		softassert.assertEquals(actualtitle,expectedpagetitle);
+	
+	}
 	// validate window design and elements
 	public void validateWindow() {
 		eyes.open(driver, "pharmazone", Thread.currentThread().getStackTrace()[2].getMethodName());

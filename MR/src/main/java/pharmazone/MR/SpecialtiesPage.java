@@ -25,6 +25,10 @@ public class SpecialtiesPage extends PageBase {
 	@FindBy(xpath="//*[@id=\"app\"]/div[1]/div[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[2]/button[1]")
 	WebElement searchbtn;
 	
+	@FindBy(xpath="//*[@id=\"app\"]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/table[1]/tbody[1]/tr[1]/td[2]")
+	public WebElement searchresult;
+	
+	
 	@FindBy(xpath="//a[contains(text(),'edit specialty')]")
 	public WebElement pagetitle;
 	
