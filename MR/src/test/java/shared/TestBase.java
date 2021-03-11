@@ -54,7 +54,8 @@ public class TestBase {
 		 * System.setProperty("webdriver.gecko.driver", firefoxDriverDriverPath); driver
 		 * = new FirefoxDriver();
 		 */
-		driver.navigate().to("https://pharmazone.roqay.solutions/login");
+		driver.get(prop.getProperty("url"));
+		//driver.navigate().to("https://pharmazone.roqay.solutions/login");
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
