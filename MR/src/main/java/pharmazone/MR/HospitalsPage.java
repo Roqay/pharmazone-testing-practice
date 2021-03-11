@@ -15,7 +15,7 @@ public class HospitalsPage extends PageBase{
 	@FindBy(name="search_query")
 	WebElement searchhospitalTxt;
 	
-	@FindBy(name="type")
+	@FindBy(id="type")
 	WebElement searchbyTypeselect;
 	
 	@FindBy(xpath="//button[contains(text(),'search')]")
@@ -30,8 +30,6 @@ public class HospitalsPage extends PageBase{
 	@FindBy(name="//tr[@class='dlt-100']//i[@class='icon-bin']")
 	WebElement deletehospitalbtn;
 	
-	@FindBy(name="//tr[@class='dlt-100']//i[@class='icon-bin']")
-	WebElement deletehospitalbtn;
 	
 	public void openHospiatlPage() {
 		clickButton(addhospitabtn);
@@ -47,9 +45,10 @@ public class HospitalsPage extends PageBase{
 	
 	public void searchHospiatlPage(String hospitalName) {
 		setTextElementText(searchhospitalTxt, hospitalName);
+		clickButton(searchbyTypeselect);
 		dropdown = new Select(searchbyTypeselect);  
 		dropdown.selectByVisibleText("All");
-		clickButton(addhospitabtn);
+		clickButton(searchbtn);
 	}
 	
 	

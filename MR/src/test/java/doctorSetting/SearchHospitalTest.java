@@ -15,8 +15,9 @@ public class SearchHospitalTest extends TestBase{
 	HospitalsPage hospitalpageObject;
 	String hospitalName= "09 Clinic";
 	
-	@Test
-	public void searchHospital() throws InterruptedException {
+	@Test (priority = 1)
+	public void searchByAllHospital() throws InterruptedException {
+		Thread.sleep(2000);
 		homepageObject = new HomePage(driver);
 		WebDriverWait  wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(homepageObject.doctorsettinglist));

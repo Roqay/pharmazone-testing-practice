@@ -21,10 +21,10 @@ import uitilies.Help;
 public class TestBase {
 	protected static WebDriver driver;
 	protected static Eyes eyes;
-	private static Properties prop;
+	public static Properties prop;
 	public Faker faker = new Faker();
 	LoginPage loginpageObject;
-
+	public FileInputStream fis;
 	// soft assertion method
 	protected SoftAssert softassert = new SoftAssert();
 
@@ -33,22 +33,20 @@ public class TestBase {
 	public void openBrowser() throws InterruptedException, Exception {
 		prop = new Properties();
 		try {
-			FileInputStream fis = new FileInputStream("resources\\test.properties");
+			fis = new FileInputStream("resources\\test.properties");
 			prop.load(fis);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+
 		String chromeDriverPath = prop.getProperty("chromepath");
 		System.setProperty("webdriver.chrome.driver", chromeDriverPath);
-		//	System.setProperty("webdriver.chrome.driver", "resources\\ChromeDriver\\chromedriver1.exe");
 		driver = new ChromeDriver();
 		/*
-		String firefoxDriverDriverPath = prop.getProperty("firefoxpath");
-		System.setProperty("webdriver.gecko.driver", firefoxDriverDriverPath);
-		driver = new FirefoxDriver();
-		 System.setProperty("webdriver.chrome.driver",
-		 "resources\\ChromeDriver\\chromedriver1.exe");
-		driver = new ChromeDriver();
+		 * String firefoxDriverDriverPath = prop.getProperty("firefoxpath");
+		 * System.setProperty("webdriver.gecko.driver", firefoxDriverDriverPath); driver
+		 * = new FirefoxDriver(); System.setProperty("webdriver.chrome.driver",
+		 * "resources\\ChromeDriver\\chromedriver1.exe"); driver = new ChromeDriver();
 		 * String firefoxDriverDriverPath = prop.getProperty("firefoxpath");
 		 * System.setProperty("webdriver.gecko.driver", firefoxDriverDriverPath); driver
 		 * = new FirefoxDriver();
@@ -56,7 +54,7 @@ public class TestBase {
 		driver.navigate().to("https://pharmazone.roqay.solutions/login");
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		initiEyes();
 	}
 
@@ -69,23 +67,16 @@ public class TestBase {
 
 	@Test
 	public void loginAdminSuccess() throws IOException {
-		Properties prop = new Properties();
-		try {
-			FileInputStream fis = new FileInputStream("resources\\test.properties");
-			prop.load(fis);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		
 		String email = prop.getProperty("admin");
-		String password =  prop.getProperty("password");
+		String password = prop.getProperty("password");
 		loginpageObject = new LoginPage(driver);
 		loginpageObject.loginAsAdmin(email, password);
 		String expectedpagetitle = driver.getTitle();
-		String actualtitle ="Pharma Zone - dashboard";
-		softassert.assertEquals(actualtitle,expectedpagetitle);
-	
+		String actualtitle = "Pharma Zone - dashboard";
+		softassert.assertEquals(actualtitle, expectedpagetitle);
+
 	}
+
 	// validate window design and elements
 	public void validateWindow() {
 		eyes.open(driver, "pharmazone", Thread.currentThread().getStackTrace()[2].getMethodName());
@@ -95,8 +86,7 @@ public class TestBase {
 		eyes.close();
 	}
 
-
-	//taking screenshot for failures 
+	// taking screenshot for failures
 	@AfterMethod
 	public void screenshotOnFailure(ITestResult result) {
 		if (result.getStatus() == ITestResult.FAILURE) {
@@ -106,10 +96,11 @@ public class TestBase {
 		}
 	}
 
+	// close browser
 	@AfterSuite
 	public void quitBrowser() {
-	driver.quit();
-	//	eyes.abortIfNotClosed();
+		driver.quit();
+		// eyes.abortIfNotClosed();
 	}
 
 }

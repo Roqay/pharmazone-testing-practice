@@ -10,7 +10,7 @@ public class HomePage extends PageBase{
 		super(driver);
 	}
 	
-	@FindBy(xpath="//body/div[@id='app']/div[1]/aside[1]/div[1]/nav[1]/ul[1]/li[3]/a[1]/span[2]")
+	@FindBy(css="[src='/public/img/icons/doctors.png']")
 	public WebElement doctorsettinglist;
 	
 	@FindBy(xpath="//span[contains(text(),'specialties')]")
