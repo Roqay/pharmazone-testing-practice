@@ -4,10 +4,14 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 trigger:
-- master
+  branches:
+    include:
+    - master
+    - pom.xml
+    - README.md
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: "vs2017-win2016"
 
 steps:
 - task: Maven@3
