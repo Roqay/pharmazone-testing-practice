@@ -7,7 +7,7 @@ import pharmazone.MR.EditSpecialistyPage;
 import pharmazone.MR.HomePage;
 import pharmazone.MR.LoginPage;
 import pharmazone.MR.SpecialtiesPage;
-import pharmazone.MR.TestBase;
+import shared.TestBase;
 
 public class EditSpecialitiesTest extends TestBase{
 	LoginPage loginpageObject;

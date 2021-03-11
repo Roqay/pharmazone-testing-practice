@@ -4,7 +4,8 @@ import pharmazone.MR.AddSpecialityPage;
 import pharmazone.MR.HomePage;
 import pharmazone.MR.LoginPage;
 import pharmazone.MR.SpecialtiesPage;
-import pharmazone.MR.TestBase;
+import shared.TestBase;
+
 import org.testng.annotations.Test;
 
 public class AddSpecialtiesTest extends TestBase {

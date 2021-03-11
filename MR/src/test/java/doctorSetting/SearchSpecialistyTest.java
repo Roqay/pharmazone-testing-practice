@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import pharmazone.MR.HomePage;
 import pharmazone.MR.LoginPage;
 import pharmazone.MR.SpecialtiesPage;
-import pharmazone.MR.TestBase;
+import shared.TestBase;
 
 public class SearchSpecialistyTest extends TestBase {
 	

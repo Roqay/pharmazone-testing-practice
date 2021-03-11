@@ -7,6 +7,8 @@
 			<class name="doctorSetting.AddSpecialtiesTest" />
 			<class name="doctorSetting.EditSpecialitiesTest" />
 			<class name="doctorSetting.SearchSpecialistyTest" />
+			<class name="doctorSetting.AddNewPrivateHospital" />
+			<class name="doctorSetting.searchByAllHospital" />
 		</classes>
 	</test>
 </suite>

@@ -1,4 +1,4 @@
-package pharmazone.MR;
+package shared;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -16,6 +16,7 @@ import org.testng.asserts.SoftAssert;
 import com.applitools.eyes.selenium.Eyes;
 import com.github.javafaker.Faker;
 
+import pharmazone.MR.LoginPage;
 import uitilies.Help;
 
 public class TestBase {

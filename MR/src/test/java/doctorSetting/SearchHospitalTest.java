@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import pharmazone.MR.HomePage;
 import pharmazone.MR.HospitalsPage;
 import pharmazone.MR.LoginPage;
-import pharmazone.MR.TestBase;
+import shared.TestBase;
 
 public class SearchHospitalTest extends TestBase{
 	LoginPage loginpageObject;

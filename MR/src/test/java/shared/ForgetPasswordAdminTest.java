@@ -1,5 +1,9 @@
-package pharmazone.MR;
+package shared;
 import org.testng.annotations.Test;
+
+import pharmazone.MR.ForgetPasswordPage;
+import pharmazone.MR.LoginPage;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 

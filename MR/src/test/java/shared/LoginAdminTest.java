@@ -1,4 +1,4 @@
-package pharmazone.MR;
+package shared;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.testng.annotations.Test;
+
+import pharmazone.MR.LoginPage;
 
 public class LoginAdminTest extends TestBase{
 	LoginPage loginpageObject;

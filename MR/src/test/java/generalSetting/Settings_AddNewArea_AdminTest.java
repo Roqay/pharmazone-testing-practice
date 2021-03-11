@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import pharmazone.MR.AreasPage;
 import pharmazone.MR.ForgetPasswordPage;
 import pharmazone.MR.LoginPage;
-import pharmazone.MR.TestBase;
+import shared.TestBase;
 
 
 public class Settings_AddNewArea_AdminTest extends TestBase {
