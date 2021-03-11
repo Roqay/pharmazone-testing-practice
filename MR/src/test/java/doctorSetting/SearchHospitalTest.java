@@ -26,7 +26,7 @@ public class SearchHospitalTest extends TestBase{
 		homepageObject.openHospitalPage();
 		hospitalpageObject = new HospitalsPage(driver);
 		hospitalpageObject.searchHospiatlPage(hospitalName);
-		softassert.assertEquals(hospitalName, hospitalName);
+		softassert.assertEquals(hospitalName, hospitalpageObject.searchresult);
 		
 	}
 

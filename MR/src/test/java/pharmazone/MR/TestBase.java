@@ -27,6 +27,8 @@ public class TestBase {
 	public FileInputStream fis;
 	// soft assertion method
 	protected SoftAssert softassert = new SoftAssert();
+	
+	
 
 	// Initiate the Chrome browser
 	@BeforeSuite

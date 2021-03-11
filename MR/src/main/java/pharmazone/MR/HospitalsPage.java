@@ -3,11 +3,9 @@ package pharmazone.MR;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
 
 public class HospitalsPage extends PageBase{
-	public Select dropdown;
-
+	
 	public HospitalsPage(WebDriver driver) {
 		super(driver);
 	}
@@ -21,7 +19,11 @@ public class HospitalsPage extends PageBase{
 	@FindBy(xpath="//button[contains(text(),'search')]")
 	WebElement searchbtn;
 	
-	@FindBy(name="//*[@id=\"app\"]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]")
+	@FindBy(xpath="//tbody/tr[1]/td[2]")
+	public WebElement searchresult; 
+	
+	
+	@FindBy(xpath="//a[contains(.,'Add New')]")
 	WebElement addhospitabtn;
 	
 	@FindBy(name="//a[@href='#/hospitals/edit/100']")
@@ -31,7 +33,7 @@ public class HospitalsPage extends PageBase{
 	WebElement deletehospitalbtn;
 	
 	
-	public void openHospiatlPage() {
+	public void addHospiatlPage() {
 		clickButton(addhospitabtn);
 	}
 	
@@ -46,8 +48,9 @@ public class HospitalsPage extends PageBase{
 	public void searchHospiatlPage(String hospitalName) {
 		setTextElementText(searchhospitalTxt, hospitalName);
 		clickButton(searchbyTypeselect);
-		dropdown = new Select(searchbyTypeselect);  
-		dropdown.selectByVisibleText("All");
+		selectDropdownmenu(searchbyTypeselect, "All");
+		//dropdown = new Select(searchbyTypeselect);  
+		//dropdown.selectByVisibleText("All");
 		clickButton(searchbtn);
 	}
 	

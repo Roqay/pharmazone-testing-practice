@@ -27,7 +27,7 @@ public class SearchSpecialistyTest extends TestBase {
 		homepageObject.openSpeicalPage();
 		specialatiesoageObject = new SpecialtiesPage(driver);
 		specialatiesoageObject.SearchSpecialisty(searchTxt);
-		softassert.assertNotEquals(searchTxt, specialatiesoageObject.searchresult);
+		softassert.assertEquals(searchTxt, specialatiesoageObject.searchresult);
 
 	}
 
