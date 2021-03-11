@@ -15,7 +15,6 @@ public class AddSpecialtiesTest extends TestBase {
 	// generate random name
 	String specialName = faker.name().title();
 
-	
 
 	@Test(priority = 1)
 	public void openSpeicalitiesPager() throws InterruptedException {

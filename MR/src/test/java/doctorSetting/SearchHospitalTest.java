@@ -5,32 +5,28 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import pharmazone.MR.HomePage;
+import pharmazone.MR.HospitalsPage;
 import pharmazone.MR.LoginPage;
-import pharmazone.MR.SpecialtiesPage;
 import pharmazone.MR.TestBase;
 
-public class SearchSpecialistyTest extends TestBase {
-	
+public class SearchHospitalTest extends TestBase{
 	LoginPage loginpageObject;
 	HomePage homepageObject;
-	SpecialtiesPage specialatiesoageObject;
-	String searchTxt = "Nutrition";
+	HospitalsPage hospitalpageObject;
+	String hospitalName= "09 Clinic";
 	
-
-	@Test(priority = 1)
-	public void openSpeicalitiesPager() throws InterruptedException {
+	@Test
+	public void searchHospital() throws InterruptedException {
 		homepageObject = new HomePage(driver);
 		WebDriverWait  wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(homepageObject.doctorsettinglist));
 		homepageObject.openDoctorSettingMenu();
 		Thread.sleep(2000);
-		homepageObject.openSpeicalPage();
-		specialatiesoageObject = new SpecialtiesPage(driver);
-		specialatiesoageObject.SearchSpecialisty(searchTxt);
-		softassert.assertNotEquals(searchTxt, specialatiesoageObject.searchresult);
-
+		homepageObject.openHospitalPage();
+		hospitalpageObject = new HospitalsPage(driver);
+		hospitalpageObject.searchHospiatlPage(hospitalName);
+		softassert.assertEquals(hospitalName, hospitalName);
+		
 	}
-
-	
 
 }

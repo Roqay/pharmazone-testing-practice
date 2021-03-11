@@ -1,5 +1,7 @@
 package doctorSetting;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import pharmazone.MR.EditSpecialistyPage;
 import pharmazone.MR.HomePage;
@@ -19,6 +21,8 @@ public class EditSpecialitiesTest extends TestBase{
 	@Test(priority = 1)
 	public void openSpeicalitiesPage() throws InterruptedException {
 		homepageObject = new HomePage(driver);
+		WebDriverWait  wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(homepageObject.doctorsettinglist));
 		homepageObject.openDoctorSettingMenu();
 		Thread.sleep(2000);
 		homepageObject.openSpeicalPage();
@@ -30,7 +34,7 @@ public class EditSpecialitiesTest extends TestBase{
 
 	}
 	
-	@Test(priority = 3, dependsOnMethods = {"openSpeicalitiesPage"})
+	@Test(priority = 2, dependsOnMethods = {"openSpeicalitiesPage"})
 	public void editSpecialName() {
 		editspecialObject = new EditSpecialistyPage(driver);
 		editspecialObject.editSpecialPage(editName);
