@@ -22,6 +22,13 @@ public class HomePage extends PageBase{
 	@FindBy(xpath="//*[@id=\"home-main\"]/header[1]/div[1]/div[1]/h3[1]")
 	public WebElement pageheaderTxt;
 	
+	@FindBy(xpath = "//body/div[@id='app']/div[1]/aside[1]/div[1]/nav[1]/ul[1]/li[2]/a[1]/span[1]")
+	WebElement settingpage;
+	@FindBy(xpath = "//span[contains(text(),'areas & sub')]")
+	WebElement openareapage;
+	
+	
+	
 	public void openDoctorSettingMenu() {
 		clickButton(doctorsettinglist);
 	}
@@ -33,6 +40,12 @@ public class HomePage extends PageBase{
 	public void openSpeicalPage() {
 		clickButton(specialitypage);
 		
+	}
+	
+	public void opensettingpage()
+	{
+		clickButton(settingpage);
+		clickButton(openareapage);
 	}
 
 }
