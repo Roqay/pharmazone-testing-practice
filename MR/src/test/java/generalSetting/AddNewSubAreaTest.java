@@ -10,7 +10,7 @@ import pharmazone.MR.LoginPage;
 import pharmazone.MR.SubAreaPage;
 import shared.TestBase;
 
-public class AddNewSubArea extends TestBase {
+public class AddNewSubAreaTest extends TestBase {
 	LoginPage loginpageObject;
 	HomePage homepageObject;
 	AreasPage AreaspageObject;

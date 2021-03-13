@@ -8,7 +8,7 @@ import pharmazone.MR.LoginPage;
 import shared.TestBase;
 
 
-public class EditArea extends TestBase {
+public class EditAreaTest extends TestBase {
 
 	LoginPage loginpageObject;
 	HomePage homepageObject;

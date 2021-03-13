@@ -9,7 +9,7 @@ import pharmazone.MR.HomePage;
 import pharmazone.MR.LoginPage;
 import shared.TestBase;
 
-public class SearchArea extends TestBase  {
+public class SearchAreaTest extends TestBase  {
 	
 	LoginPage loginpageObject;
 	HomePage homepageObject;

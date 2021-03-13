@@ -26,6 +26,8 @@ public class HomePage extends PageBase{
 	WebElement settingpage;
 	@FindBy(xpath = "//span[contains(text(),'areas & sub')]")
 	WebElement openareapage;
+	@FindBy(xpath = "//span[contains(text(),'Brands')]")
+	WebElement openbrandspage;
 	
 	
 	
@@ -47,5 +49,14 @@ public class HomePage extends PageBase{
 		clickButton(settingpage);
 		clickButton(openareapage);
 	}
+	
+	public void openbrandspage()
+	{
+		clickButton(settingpage);
+		clickButton(openbrandspage);
+	}
+	
+	
+	
 
 }

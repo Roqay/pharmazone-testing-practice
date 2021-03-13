@@ -8,20 +8,19 @@ import pharmazone.MR.HomePage;
 import pharmazone.MR.LoginPage;
 import shared.TestBase;
 
-public class DeleteArea extends TestBase {
+public class AddAreaTest extends TestBase {
 	LoginPage loginpageObject;
 	HomePage homepageObject;
 	AreasPage AreaspageObject;
 	String area="Nuzha Governorate";
 
 	@Test(priority = 1)
-	public void UserCanDeleteArea() throws InterruptedException {
+	public void AddNewArea() {
 		homepageObject=new HomePage(driver);
 		homepageObject.opensettingpage();
 		AreaspageObject=new AreasPage(driver);
 		AreaspageObject.AddNewArea(area);
-		AreaspageObject.DeleteArea();
-		Assert.assertTrue(AreaspageObject.deletsuccessmsg.getText().contains("Deleted Successfully"));
+		Assert.assertTrue(AreaspageObject.areanametxt.getText().contains(area));
 
 	}
 }
