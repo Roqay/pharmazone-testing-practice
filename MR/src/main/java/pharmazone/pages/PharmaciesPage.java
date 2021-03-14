@@ -13,7 +13,7 @@ public class PharmaciesPage extends PageBase{
 	@FindBy(xpath="//a[contains(.,'Add New')]")
 	WebElement addbtn;
 	
-	@FindBy(id="dltModal")
+	@FindBy(id="exampleInputft")
 	WebElement searchtxt;
 	
 	@FindBy(xpath="//*[@id=\"search_form\"]/div[1]/div[2]/button[1]")

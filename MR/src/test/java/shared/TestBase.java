@@ -69,6 +69,7 @@ public class TestBase {
 
 	}
 
+	// login as admin to the dashboard 
 	@Test
 	public void loginAdminSuccess() throws IOException {
 		String email = prop.getProperty("admin");
@@ -103,8 +104,9 @@ public class TestBase {
 	// close browser
 	@AfterSuite
 	public void quitBrowser() {
-		//driver.quit();
+		driver.quit();
 		// eyes.abortIfNotClosed();
 	}
+	
 
 }

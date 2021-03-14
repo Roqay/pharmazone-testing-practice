@@ -16,11 +16,13 @@ public class SearchPharmacyTest extends TestBase{
 	String pharmacyname="Al Eqila Cop";
 	
 	@Test(priority = 1)
-	public void searchPharmacyName() {
+	public void searchPharmacyName() throws InterruptedException {
 		homepageObject = new HomePage(driver);
 		WebDriverWait  wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(homepageObject.doctorsettinglist));
 		homepageObject.openDoctorSettingMenu();
+		Thread.sleep(2000);
+		homepageObject.openPharmacyPage();
 		pharmacypageObject = new PharmaciesPage(driver);
 		pharmacypageObject.searchPharmacy(pharmacyname);
 		softassert.assertEquals(pharmacypageObject.searchresult, pharmacyname);
