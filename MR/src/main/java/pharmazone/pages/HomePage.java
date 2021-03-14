@@ -21,6 +21,9 @@ public class HomePage extends PageBase {
 
 	@FindBy(xpath = "//span[contains(text(),'pharmacies')]")
 	WebElement pharmacypage;
+	
+	@FindBy(xpath = "//*[@id=\"unifyMenu\"]/li[3]/ul[1]/li[4]/a[1]/span[1]")
+	WebElement doctorspage;
 
 	@FindBy(xpath = "//*[@id=\"home-main\"]/header[1]/div[1]/div[1]/h3[1]")
 	public WebElement pageheaderTxt;
@@ -34,6 +37,10 @@ public class HomePage extends PageBase {
 
 	public void openDoctorSettingMenu() {
 		clickButton(doctorsettinglist);
+	}
+	
+	public void openDoctorsPage() {
+		clickButton(doctorspage);
 	}
 
 	public void openHospitalPage() {
