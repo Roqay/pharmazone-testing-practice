@@ -22,6 +22,9 @@ public class DoctorsPage extends PageBase{
 	@FindBy(xpath="//button[contains(text(),'search')]")
 	WebElement searchbtn;
 	
+	@FindBy(xpath="//*[@id=\"app\"]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/table[1]/tbody[1]/tr[1]/td[2]")
+	public WebElement searchresult;
+	
 	@FindBy(xpath="//a[contains(.,'Add New')]")
 	WebElement addnewdoctorbtn;
 	
