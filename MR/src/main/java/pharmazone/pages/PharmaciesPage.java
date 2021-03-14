@@ -14,10 +14,10 @@ public class PharmaciesPage extends PageBase{
 	WebElement addbtn;
 	
 	@FindBy(id="exampleInputft")
-	WebElement searchtxt;
+	public WebElement searchtxt;
 	
 	@FindBy(xpath="//*[@id=\"search_form\"]/div[1]/div[2]/button[1]")
-	WebElement searchbtn;
+	public WebElement searchbtn;
 	
 	@FindBy(xpath="//a[@href='#/pharmacies/edit/371']")
 	WebElement editbtn;
