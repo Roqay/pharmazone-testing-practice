@@ -7,7 +7,7 @@ import java.util.Properties;
 
 import org.testng.annotations.Test;
 
-import pharmazone.MR.LoginPage;
+import pharmazone.pages.LoginPage;
 
 public class LoginAdminTest extends TestBase{
 	LoginPage loginpageObject;

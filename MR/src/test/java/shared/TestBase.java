@@ -7,7 +7,6 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -17,7 +16,7 @@ import org.testng.asserts.SoftAssert;
 import com.applitools.eyes.selenium.Eyes;
 import com.github.javafaker.Faker;
 
-import pharmazone.MR.LoginPage;
+import pharmazone.pages.LoginPage;
 import uitilies.Help;
 
 public class TestBase {
