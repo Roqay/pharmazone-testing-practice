@@ -64,7 +64,7 @@ public class AreasPage extends PageBase {
 	public void DeleteArea() throws InterruptedException
 	{
 		clickButton(deletebtn);
-		Thread.sleep(500);
+		//Thread.sleep(500);
 		clickButton(deletconfirmationbtn);
 		clickButton(closeconfirmationmsg);
 
