@@ -37,7 +37,10 @@ public class HomePage extends PageBase {
 	@FindBy(xpath="//span[contains(text(),'products')]")
 	WebElement openproductspage;
 	
-	
+	 @FindBy(xpath = "//body/div[@id='app']/div[1]/aside[1]/div[1]/nav[1]/ul[1]/li[5]/a[1]/span[1]/img[1]")
+	 WebElement teamspage;
+     
+     
 
 	public void openDoctorSettingMenu() {
 		clickButton(doctorsettinglist);
@@ -73,5 +76,8 @@ public class HomePage extends PageBase {
 		clickButton(openproductspage);
 	}
 
-
+	public void openTeamsPage() {
+		clickButton(teamspage);
+		
+	}
 }
