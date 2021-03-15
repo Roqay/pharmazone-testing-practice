@@ -5,11 +5,9 @@ import org.testng.annotations.Test;
 
 import pharmazone.pages.AreasPage;
 import pharmazone.pages.HomePage;
-import pharmazone.pages.LoginPage;
 import shared.TestBase;
 
 public class AddAreaTest extends TestBase {
-	LoginPage loginpageObject;
 	HomePage homepageObject;
 	AreasPage AreaspageObject;
 	String area="Nuzha Governorate";
