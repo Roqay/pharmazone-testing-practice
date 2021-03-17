@@ -9,6 +9,13 @@
 			<class name="doctorSetting.SearchSpecialistyTest" />
 			<class name="doctorSetting.AddNewPrivateHospital" />
 			<class name="doctorSetting.searchByAllHospital" />
+			<class name="doctorSetting.EditHospiatlTest" />
+			<class name="doctorSetting.AddDoctorsTest" />
+			<class name="doctorSetting.SearchDoctorsTest" />
+			<class name="doctorSetting.AddHospitalTest" />
+			<class name="doctorSetting.EditHospiatlTest" />
+			<class name="doctorSetting.SearchHospitalTest" />
+			
 		</classes>
 	</test>
 </suite>

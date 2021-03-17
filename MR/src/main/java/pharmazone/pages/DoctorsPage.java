@@ -28,7 +28,7 @@ public class DoctorsPage extends PageBase{
 	@FindBy(xpath="//a[contains(.,'Add New')]")
 	WebElement addnewdoctorbtn;
 	
-	@FindBy(xpath="//*[@id=\"app\"]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]")
+	@FindBy(xpath="//a[@href='#/doctors/edit/1214']/i[@class='icon-edit']")
 	WebElement editdoctorbtn;
 	
 	@FindBy(xpath="//tr[@class='dlt-1214']//i[@class='icon-bin']")
