@@ -1,5 +1,6 @@
 package pharmazone.pages;
 
+import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -37,13 +38,27 @@ public class AddDoctorPage extends PageBase {
 	@FindBy(id="exampleInputend_work_hour")
 	WebElement endhourtime;
 	
-	@FindBy(xpath="//*[@id=\"add-ds\"]/div[1]/div[10]/div[1]/div[1]/span[1]/span[1]/span[1]/ul[1]")
-	WebElement offdaysdrodownlist;
+	@FindBy(css=".select2-selection__rendered")
+	List<WebElement> offdaysdrodownlist;
 	
 	@FindBy(xpath="//*[@id=\"add-ds\"]/button[1]")
-	WebElement savebtn;
+	public WebElement savebtn;
 	
-	public void addNewDoctor(String name, String speciality, String hospital, String area, String category) {
+	public void addNewDoctor(String name, String speciality, String hospital, String area, String category, String phone,String mobile
+			,String starthour, String endhour,String offdays) {
+		setTextElementText(doctornametxt, name);
+		selectDropdownmenu(speicaldropdownlist, speciality);
+		selectDropdownmenu(hospitaldrodpwnlist, hospital);
+		selectDropdownmenu(areadrodpwnlist, area);
+		selectDropdownmenu(doctorcategorylist, category);
+		setTextElementText(doctorphonetxt, phone);
+		setTextElementText(doctormobiletxt, mobile);
+		setTextElementText(starthourtime, starthour);
+		setTextElementText(endhourtime, endhour);
+		offdaysdrodownlist.get(0).click();
+		clickButton(savebtn);
 		
 	}
+
+	
 }
