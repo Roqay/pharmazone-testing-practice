@@ -38,6 +38,7 @@ public class HomePage extends PageBase {
 	WebElement openproductspage;
 	
 	 @FindBy(xpath = "//body/div[@id='app']/div[1]/aside[1]/div[1]/nav[1]/ul[1]/li[5]/a[1]/span[1]/img[1]")
+	public
 	 WebElement teamspage;
      
      

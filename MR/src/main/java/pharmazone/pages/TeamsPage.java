@@ -45,7 +45,7 @@ public class TeamsPage extends PageBase {
     	
     	DeleteTeamBtn.click();
     }
-    public void addTeam () 
+    public void addTeamPage () 
     {
     	
     	AddTeamBtn.click();

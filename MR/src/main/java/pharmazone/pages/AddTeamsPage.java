@@ -19,11 +19,11 @@ public class AddTeamsPage extends PageBase{
 	 @FindBy(xpath="//button[contains(text(),'add')]")
 		WebElement addbtn;
 	 
-	 public void AddNewTeam (String teamname) 
+	 public void AddNewTeam (String teamname , String type ) 
 	 {
 		 setTextElementText(TeamNameTxt,teamname);
 	
-			selectDropdownmenu(TeamTypeselect, "medical rep");
+			selectDropdownmenu(TeamTypeselect, type);
 			clickButton(addbtn);
 		 
 	
