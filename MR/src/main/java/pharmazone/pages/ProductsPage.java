@@ -21,13 +21,13 @@ public class ProductsPage extends PageBase {
 	WebElement dismisssuccessmsg;
 	@FindBy(xpath = "//div[@id='swal2-content']")
 	public WebElement deletesuccessmsg;
-
-
-
-
-
-
-
+	@FindBy(xpath="//input[@type='text']")
+	WebElement searchbox;
+	@FindBy(xpath="//button[contains(text(),'search')]")
+	WebElement searcbtn;
+	@FindBy(xpath="//td[contains(text(),'Chloe')]")
+	public WebElement returnproductname;
+	
 
 	public void openaddproductpage()
 	{
@@ -44,6 +44,11 @@ public class ProductsPage extends PageBase {
 		clickButton(deleteproductbtn);
 		clickButton(deletconfirmationmsg);
 		clickButton(dismisssuccessmsg);
+	}
+	public void searchforproducts(String productname)
+	{
+		setTextElementText(searchbox, productname);
+		clickButton(searcbtn);
 	}
 
 }
