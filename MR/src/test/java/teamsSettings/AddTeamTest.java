@@ -38,12 +38,12 @@ public class AddTeamTest extends TestBase {
 		
 	
 }
-	/*
+	
 	@Test(priority =2)
 	public void validateteamAdded() {
-		teamspageObject.SearchTeams();
-		softassert.assertEquals();
+		teamspageObject.searchTeams(teamname);
+		softassert.assertEquals(teamname,	teamspageObject.SearchResult);
 		
 	}	
-	*/
+	
 }
