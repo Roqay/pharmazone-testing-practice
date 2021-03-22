@@ -27,13 +27,23 @@ public class HomePage extends PageBase {
 
 	@FindBy(xpath = "//body/div[@id='app']/div[1]/aside[1]/div[1]/nav[1]/ul[1]/li[2]/a[1]/span[1]")
 	WebElement settingpage;
+	
 	@FindBy(xpath = "//span[contains(text(),'areas & sub')]")
 	WebElement openareapage;
+	
 	@FindBy(xpath = "//span[contains(text(),'Brands')]")
 	WebElement openbrandspage;
+	
 	@FindBy(xpath="//span[contains(text(),'products')]")
 	WebElement openproductspage;
 
+	@FindBy(xpath="//*[@id=\"unifyMenu\"]/li[6]/a[1]/span[2]")
+	public WebElement planslist;
+	
+	@FindBy(xpath="//a[@href='#/plans']/span[@class='nav-title']")
+	public WebElement plansbtn;
+	
+	
 	
 	 @FindBy(xpath = "//body/div[@id='app']/div[1]/aside[1]/div[1]/nav[1]/ul[1]/li[5]/a[1]/span[1]/img[1]")
 	public  WebElement teamspage;
@@ -45,6 +55,13 @@ public class HomePage extends PageBase {
 	WebElement calendarpage;
 	
 
+	public void openPlanSetting() {
+		clickButton(planslist);
+	}
+	
+	public void openPlansPage() {
+		clickButton(plansbtn);
+	}
 
 	public void openDoctorSettingMenu() {
 		clickButton(doctorsettinglist);
