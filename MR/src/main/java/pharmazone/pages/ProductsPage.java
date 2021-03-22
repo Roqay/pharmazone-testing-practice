@@ -11,8 +11,6 @@ public class ProductsPage extends PageBase {
 	}
 	@FindBy(partialLinkText = "Add N")
 	WebElement addproductbtn;
-
-
 	@FindBy(xpath = "//tbody/tr[1]/td[8]/a[1]/i[1]")
 	WebElement editproductbtn;
 	@FindBy(xpath = "//tbody/tr[1]/td[8]/a[2]/i[1]")
@@ -41,15 +39,18 @@ public class ProductsPage extends PageBase {
 		clickButton(editproductbtn);
 	}
 
+	
+	public void searchforproducts(String productname)
+	{
+		setTextElementText(searchbox, productname);
+		clickButton(searcbtn);
+	}
+
 	public void deleteproduct()
 	{
 		clickButton(deleteproductbtn);
 		clickButton(deletconfirmationmsg);
 		clickButton(dismisssuccessmsg);
 	}
-	public void searchforproducts(String productname)
-	{
-		setTextElementText(searchbox, productname);
-		clickButton(searcbtn);
-	}
+	
 }

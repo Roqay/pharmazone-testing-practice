@@ -15,7 +15,7 @@ public class AddDoctorsTest extends TestBase {
 	HomePage homepageObject;
 	DoctorsPage doctorpageObject;
 	AddDoctorPage adddoctorobject;
-	String name= faker.name().fullName();
+	String name=faker .name().fullName();
 	String speciality= "Cardiology";
 	String hospital="09 clinic";
 	String area="Capital Governorate";

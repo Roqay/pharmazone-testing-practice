@@ -46,17 +46,7 @@ public class TeamsPage extends PageBase {
     	DeleteTeamBtn.click();
     }
 
-    public void addTeam () 
-    {
-    	
-    	AddTeamBtn.click();
-    }
-    public void searchTeamslPage(String teamlName) {
-		
-    	//SearchTeamTxt.sendKeys(teamlName);
-    	setTextElementText(SearchTeamTxt, teamlName);
-		//SearchBtn.click
-    }
+
 
     public void addTeamPage ()
     {
