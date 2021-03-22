@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite thread-count="1" verbose="1" name="General Setting"
+	parallel="tests">
+
+	<test name="doctorSetting">
+		<classes>
+			<class name="doctorSetting.AddSpecialtiesTest" />
+			<class name="doctorSetting.EditSpecialitiesTest" />
+			<class name="doctorSetting.SearchSpecialistyTest" />
+			<class name="doctorSetting.AddNewPrivateHospital" />
+			<class name="doctorSetting.searchByAllHospital" />
+			<class name="doctorSetting.EditHospiatlTest" />
+			<class name="doctorSetting.AddDoctorsTest" />
+			<class name="doctorSetting.SearchDoctorsTest" />
+			<class name="doctorSetting.AddHospitalTest" />
+			<class name="doctorSetting.EditHospiatlTest" />
+			<class name="doctorSetting.SearchHospitalTest" />
+			
+		</classes>
+	</test>
+</suite>
