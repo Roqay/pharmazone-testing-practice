@@ -28,6 +28,15 @@ public class ProductsDetailsPage extends PageBase {
 	WebElement uploader;
 	@FindBy(xpath = "//button[contains(text(),'add')]")
 	WebElement addbtn;
+	@FindBy(xpath = "//button[contains(text(),'save')]")
+	WebElement savebtn;
+	@FindBy(xpath = "//p[contains(text(),'updated successfully')]")
+	public WebElement editsuccessmsg;
+	
+	
+	
+	
+	
 	
 
 
@@ -45,6 +54,11 @@ public class ProductsDetailsPage extends PageBase {
 		setTextElementText(Commissionbox, Commission);
 		setTextElementText(uploader, imagePath);
 		clickButton(addbtn);
+	}
+	
+	public void editproductform()
+	{
+		clickButton(savebtn);
 	}
 
 }
