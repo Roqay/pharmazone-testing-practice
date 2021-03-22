@@ -45,6 +45,7 @@ public class TeamsPage extends PageBase {
     	
     	DeleteTeamBtn.click();
     }
+
     public void addTeam () 
     {
     	
@@ -55,6 +56,18 @@ public class TeamsPage extends PageBase {
     	//SearchTeamTxt.sendKeys(teamlName);
     	setTextElementText(SearchTeamTxt, teamlName);
 		//SearchBtn.click
+    }
+
+    public void addTeamPage ()
+    {
+    	
+    	AddTeamBtn.click();
+    }
+    public void searchTeams(String teamName) {
+		
+    	//SearchTeamTxt.sendKeys(teamlName); this function is in base 
+    	setTextElementText(SearchTeamTxt, teamName);
+		//SearchBtn.click this function is in base 
     	clickButton(SearchBtn);
 		
 	

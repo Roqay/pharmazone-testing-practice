@@ -29,11 +29,15 @@ public class ProductsDetailsPage extends PageBase {
 	@FindBy(xpath = "//button[contains(text(),'add')]")
 	WebElement addbtn;
 	
+	@FindBy(xpath = "//button[contains(text(),'save')]")
+	WebElement savebtn;
+	@FindBy(xpath = "//p[contains(text(),'updated successfully')]")
+	public WebElement editsuccessmsg;
+	
 
 
 
-	public void addnewproduct
-	(String brandname , String productname , String skunumber , String price,String priceafter ,String cost,String Commission,String imagePath) throws InterruptedException
+	public void addnewproduct(String brandname , String productname , String skunumber , String price,String priceafter ,String cost,String Commission,String imagePath) throws InterruptedException
 	
 	{
 		selectDropdownmenu(brandslist, brandname);
@@ -45,6 +49,14 @@ public class ProductsDetailsPage extends PageBase {
 		setTextElementText(Commissionbox, Commission);
 		setTextElementText(uploader, imagePath);
 		clickButton(addbtn);
+	
+	
+	}
+
+	
+	public void editproductform()
+	{
+		clickButton(savebtn);
 	}
 
 }

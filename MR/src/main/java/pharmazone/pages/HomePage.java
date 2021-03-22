@@ -25,9 +25,6 @@ public class HomePage extends PageBase {
 	@FindBy(xpath = "//*[@id=\"unifyMenu\"]/li[3]/ul[1]/li[4]/a[1]/span[1]")
 	WebElement doctorspage;
 
-	@FindBy(xpath = "//*[@id=\"home-main\"]/header[1]/div[1]/div[1]/h3[1]")
-	public WebElement pageheaderTxt;
-
 	@FindBy(xpath = "//body/div[@id='app']/div[1]/aside[1]/div[1]/nav[1]/ul[1]/li[2]/a[1]/span[1]")
 	WebElement settingpage;
 	@FindBy(xpath = "//span[contains(text(),'areas & sub')]")
@@ -38,14 +35,19 @@ public class HomePage extends PageBase {
 	WebElement openproductspage;
 	
 	 @FindBy(xpath = "//body/div[@id='app']/div[1]/aside[1]/div[1]/nav[1]/ul[1]/li[5]/a[1]/span[1]/img[1]")
-	 WebElement teamspage;
-     
-     
+	public  WebElement teamspage;
+
+	@FindBy(xpath = "//*[@id=\"home-main\"]/header[1]/div[1]/div[1]/h3[1]")
+	public WebElement pageheaderTxt;	
+	
+	@FindBy(xpath = "//span[contains(text(),'Calender')]")
+	WebElement calendarpage;
+
 
 	public void openDoctorSettingMenu() {
 		clickButton(doctorsettinglist);
 	}
-	
+
 	public void openDoctorsPage() {
 		clickButton(doctorspage);
 	}
@@ -78,6 +80,13 @@ public class HomePage extends PageBase {
 
 	public void openTeamsPage() {
 		clickButton(teamspage);
-		
+
+	}
+
+	public void opencalendarspage()
+	{
+		clickButton(settingpage);
+		clickButton(calendarpage);
+
 	}
 }

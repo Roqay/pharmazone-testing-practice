@@ -24,6 +24,13 @@ public class AddTeamsPage extends PageBase{
 		 setTextElementText(TeamNameTxt,teamname);
 	
 			selectDropdownmenu(TeamTypeselect, "medical rep");
+	 }
+
+	 public void AddNewTeam (String teamname , String type ) 
+	 {
+		 setTextElementText(TeamNameTxt,teamname);
+	
+			selectDropdownmenu(TeamTypeselect, type);
 			clickButton(addbtn);
 		 
 	
