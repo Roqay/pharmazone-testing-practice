@@ -17,10 +17,12 @@ public class SearchPlansTest extends TestBase{
 	String startdate= "02/01/2021";
 	String enddate= "02/28/2021";
 	
-	@Test
-	public void searchPlans() {
+	@Test(priority = 1)
+	public void searchPlans() throws InterruptedException {
+		Thread.sleep(2000);
 		homepageObject = new HomePage(driver);
-		WebDriverWait  wait = new WebDriverWait(driver, 10);
+		Thread.sleep(2000);
+		WebDriverWait  wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.elementToBeClickable(homepageObject.planslist));
 		homepageObject.openPlanSetting();
 		wait.until(ExpectedConditions.elementToBeClickable(homepageObject.plansbtn));
