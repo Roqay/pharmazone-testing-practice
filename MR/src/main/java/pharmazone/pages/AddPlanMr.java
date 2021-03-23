@@ -19,16 +19,16 @@ public class AddPlanMr extends PageBase{
 	@FindBy(id="exampleInputCalendar")
 	WebElement calendarselect;
 	
-	@FindBy(xpath="//*[@id=\"add-area\"]/div[1]/div[2]/div[1]/span[1]/input[1]")
+	@FindBy(xpath="//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/span[1]/input[1]")
 	WebElement startdate;
 	
-	@FindBy(xpath="//*[@id=\"add-area\"]/div[1]/div[3]/div[1]/span[1]/input[1]")
+	@FindBy(xpath="//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[5]/div[1]/span[1]/input[1]")
 	WebElement enddate;
 	
 	@FindBy(id="rsq")
 	WebElement salescount;
 	
-	@FindBy(xpath="//div[4]//select[@class='form-control']")
+	@FindBy(xpath="//div[7]//select[@class='form-control']")
 	WebElement selectemp;
 	
 	@FindBy(xpath="//button[contains(text(),'Save')]")

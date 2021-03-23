@@ -1,5 +1,6 @@
 package plansSetting;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
@@ -29,14 +30,14 @@ public class AddNewPlanMrTest extends TestBase{
 		Thread.sleep(2000);
 		homepageObject = new HomePage(driver);
 		Thread.sleep(2000);
-		//JavascriptExecutor jse = (JavascriptExecutor)driver;
-		//jse.executeScript("scrollBy(0,500)","");
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("scrollBy(0,500)","");
 		homepageObject.openPlanSetting();
 		WebDriverWait  wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(homepageObject.planslist));
+		jse.executeScript("scrollBy(-500,0)","");
 		homepageObject.openPlansPage();
 		wait.until(ExpectedConditions.elementToBeClickable(homepageObject.plansbtn));
-		
 		planpageObject = new PlansPage(driver);
 		planpageObject.addNewPlan();
 		String expectedurl = "https://pharmazone.roqay.solutions/#/plans/create";
