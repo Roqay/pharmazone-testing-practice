@@ -23,10 +23,10 @@ public class SearchPlansTest extends TestBase{
 		homepageObject = new HomePage(driver);
 		Thread.sleep(2000);
 		WebDriverWait  wait = new WebDriverWait(driver, 20);
-		wait.until(ExpectedConditions.elementToBeClickable(homepageObject.planslist));
 		homepageObject.openPlanSetting();
-		wait.until(ExpectedConditions.elementToBeClickable(homepageObject.plansbtn));
+		wait.until(ExpectedConditions.elementToBeClickable(homepageObject.planslist));
 		homepageObject.openPlansPage();
+		wait.until(ExpectedConditions.elementToBeClickable(homepageObject.plansbtn));
 		planpageObject = new PlansPage(driver);
 		planpageObject.searchPlan(name, calendar, startdate, enddate);
 	}
