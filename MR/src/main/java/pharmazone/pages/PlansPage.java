@@ -24,6 +24,9 @@ public class PlansPage extends PageBase {
 	@FindBy(xpath= "//button[contains(text(),'search')]")
 	WebElement searchbtn;
 	
+	@FindBy(xpath="//*[@id=\"app-table\"]/table[1]/tbody[1]/tr[1]/td[2]")
+	public WebElement searchresult;
+	
 	@FindBy(xpath= "//a[@href='#/plans/create']/span[1]")
 	WebElement addbtn;
 	
@@ -32,6 +35,8 @@ public class PlansPage extends PageBase {
 	
 	@FindBy(xpath= "//a[@href='#/plans/edit/602']/i[@class='icon-edit']")
 	WebElement deletebtn;
+	
+	
 	
 	public void addNewPlan() {
 		clickButton(addbtn);

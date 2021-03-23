@@ -12,7 +12,7 @@ public class PageBase {
 	protected WebDriver driver;
 	public Select select ; 
 	public JavascriptExecutor jse ; 
-	public Actions action = new Actions(driver);
+	public Actions action ;
 
 	// public static Select dropdown;
 	public PageBase(WebDriver driver) {

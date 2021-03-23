@@ -37,7 +37,7 @@ public class HomePage extends PageBase {
 	@FindBy(xpath="//span[contains(text(),'products')]")
 	WebElement openproductspage;
 
-	@FindBy(xpath="//*[@id=\"unifyMenu\"]/li[6]/a[1]/span[1]/img[1]")
+	@FindBy(css="[src='/public/img/icons/plan.png']")
 	public WebElement planslist;
 	
 	@FindBy(xpath="//a[@href='#/plans']/span[@class='nav-title']")
@@ -54,8 +54,8 @@ public class HomePage extends PageBase {
 	
 
 	public void openPlanSetting() {
-		scrollToBottom();
 		clickButton(planslist);
+		
 		
 	}
 	
