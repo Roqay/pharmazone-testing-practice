@@ -35,7 +35,7 @@ public class AddPharmacyTest extends TestBase{
 		softassert.assertEquals(actualurl, expectedurl);
 		addpharmacyobject = new AddPharmacyPage(driver);
 		addpharmacyobject.addNewPharmacy(pharmacyname,pharmacyaddress);
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'pharmacies')]"))));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(driver.findElement(By.xpath("//a[contains(text(),'pharmacies')]"))));
 		
 		
 	}

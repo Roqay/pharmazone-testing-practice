@@ -36,7 +36,7 @@ public class EditPharmacyTest extends TestBase {
 		softassert.assertEquals(actualurl, expectedurl);
 		editpharmacyobject = new EditPharmacyPage(driver);
 		editpharmacyobject.editNewPharmacy(pharmacyname, pharmacyaddress);
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'pharmacies')]"))));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(driver.findElement(By.xpath("//a[contains(text(),'pharmacies')]"))));
 	}
 	
 	@Test(priority = 2, dependsOnMethods = "EditPharmacy")

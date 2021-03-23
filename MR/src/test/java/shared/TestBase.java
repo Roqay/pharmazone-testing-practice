@@ -71,7 +71,7 @@ public class TestBase {
 
 	// login as admin to the dashboard 
 	@Test
-	public void loginAdminSuccess() throws IOException {
+	public void loginAdminSuccess() throws IOException, InterruptedException {
 		String email = prop.getProperty("admin");
 		String password = prop.getProperty("password");
 		loginpageObject = new LoginPage(driver);
@@ -79,6 +79,7 @@ public class TestBase {
 		String expectedpagetitle = driver.getTitle();
 		String actualtitle = "Pharma Zone - dashboard";
 		softassert.assertEquals(actualtitle, expectedpagetitle);
+		Thread.sleep(2000);
 
 	}
 
